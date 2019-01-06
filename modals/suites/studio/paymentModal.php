@@ -123,7 +123,41 @@
                                 <label class="form-label">Expiration date</label>
                             </div>
                             <div class="col-md-12">
-                                <input type="date" value="<?php echo date('Y-m-d') ?>" min="<?php echo date('Y-m-d') ?>" class="form-control custm-input" name="cardExpiry" id="cardExpiry"></input>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <select name="exp_month" id="" class="form-control custm-input">
+                                            <option value="">--</option>
+                                            <option value="01">01 Jan</option>
+                                            <option value="02">02 Feb</option>
+                                            <option value="03">03 Mar</option>
+                                            <option value="04">04 Apr</option>
+                                            <option value="05">05 May</option>
+                                            <option value="06">06 Jun</option>
+                                            <option value="07">07 Jul</option>
+                                            <option value="08">08 Aug</option>
+                                            <option value="09">09 Sep</option>
+                                            <option value="10">10 Oct</option>
+                                            <option value="11">11 Nov</option>
+                                            <option value="12">12 Dec</option>
+                                        </select>
+                                    </div> <div class="col-md-4">
+                                        <select name="exp_year" id="" class="form-control custm-input">
+                                            <option value="">--</option>
+                                            <option value="19">2019</option>
+                                            <option value="20">2020</option>
+                                            <option value="21">2021</option>
+                                            <option value="22">2022</option>
+                                            <option value="23">2023</option>
+                                            <option value="24">2024</option>
+                                            <option value="25">2025</option>
+                                            <option value="26">2026</option>
+                                            <option value="27">2027</option>
+                                            <option value="28">2028</option>
+                                            <option value="29">2029</option>
+                                            <option value="30">2030</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
