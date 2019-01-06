@@ -1,0 +1,1 @@
+INSERT INTO accounting (Ref_No, Acc_Date_Avail, Acc_Date_Paid, Acc_Type, Acc_Balance, Acc_Payment, Acc_Archived) VALUES ('20', NOW(), '2018-12-17', 'Bedroom-Rent', '9000.00', 0, '1')

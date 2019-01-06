@@ -1,0 +1,26 @@
+.custm-header-about::after {
+    position: absolute;
+    bottom: -30%;
+    left: 0;
+    width: 70px;
+    height: 4px;
+    content: '';
+    background: #FFC300;
+
+}
+
+.about-header {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 18px;
+}
+
+.about-header::after {
+    position: absolute;
+    bottom: 85%;
+    left: 0;
+    width: 70px;
+    height: 4px;
+    content: '';
+    background: #FFC300;
+}

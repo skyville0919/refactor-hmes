@@ -1,0 +1,268 @@
+.custm-title {
+    text-align: center;
+    color: green;
+}
+
+.asterisk
+{
+    color: red;
+}
+
+.custm-input {
+    border: 2px solid black;
+    background-color: gold;
+    color: black;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+.custm-input:focus {
+    background-color: rgba(255, 217, 0, 0.856);
+    color: white;
+}
+
+.modal-body {
+    background:gray !important;
+    height: 500px;
+    overflow-y: auto;
+}
+
+.modal {
+    overflow-y: initial !important;
+}
+
+.custm-input-label {
+    color: white;
+    font-size: 16px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-weight: 700;
+}
+
+.modal-dialog {
+    border: solid 2px gold;
+    border-radius: 5px;
+}
+
+.modal-header {
+    background-color:rgba(255, 217, 0, 0.651);
+}
+
+.modal-footer {
+    background: rgba(255, 217, 0, 0.678);
+}
+
+.custm-modal-btn {
+    color: white;
+    background-color: rgb(250, 26, 26);
+    font-weight: 600;
+}
+
+.checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    top: 30px;
+}
+
+.checkmark {
+    position: absolute;
+    top: 9px;
+    left: 14px;
+    height: 15px;
+    width: 15px;
+    background-color:#eee;
+    border-radius: 50%; 
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: white;
+}
+
+.checkmark::after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked ~
+.checkmark::after {
+    display: block;
+}
+
+.checkbox-container
+.checkmark::after {
+    left: 4px;
+    top: 4px;
+    width: 7px;
+    height: 7px;
+    background-color: blue;
+    border-radius: 50%; 
+
+}
+
+
+
+
+
+.checkbox-container-payment {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.checkbox-container-payment input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    top: 30px;
+}
+
+.checkmark-payment {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    height: 15px;
+    width: 15px;
+    background-color:#eee;
+    border-radius: 50%; 
+}
+
+.checkbox-container-payment:hover input ~ .checkmark-payment {
+    background-color: #ccc;
+}
+
+.checkbox-container-payment input:checked ~ .checkmark-payment {
+    background-color: white;
+}
+
+.checkmark-payment::after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container-payment input:checked ~
+.checkmark-payment::after {
+    display: block;
+}
+
+.checkbox-container-payment
+.checkmark-payment::after {
+    left: 4px;
+    top: 4px;
+    width: 7px;
+    height: 7px;
+    background-color: blue;
+    border-radius: 50%; 
+
+}
+
+
+.custm-textarea {
+    height: 100px;
+}
+
+.custm-checkbox {
+    width: 25px;
+    height: 25px;
+}
+
+.termsP {
+    font-size: 15px;
+    color: white;
+    font-weight: 600;
+}
+.termsLink {
+    color: black;
+}
+
+.custm-terms-modal {
+    overflow-y: initial !important;
+}
+
+.custm-terms-body {
+    height: 500px;
+    overflow-y: auto;
+}
+
+
+
+
+
+.header2 {
+    color: black;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.label2 {
+    color: white;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.header3{
+    font-size: 1.2em;
+    font-weight: 500;
+    color: black;
+}
+
+.custm-message-box {
+    border: solid 2px black;
+    border-radius: 5px;
+    background: gold;
+}
+
+.message1 {
+    color: black;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.custm-message-box:hover {
+    background: #ccc;
+}
+
+.form-label {
+    font-size: 15px;
+    color: white;
+    font-weight: 600;
+}
+
+input[type="date"]::-webkit-inner-spin-button {
+    display: none;
+    -webkit-appearance: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+    display: none;
+    -webkit-appearance: none;
+}

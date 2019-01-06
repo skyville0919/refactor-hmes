@@ -1,0 +1,89 @@
+.suites-header {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.suites-header::after {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 70px;
+    height: 4px;
+    content: '';
+    background: #FFC300;
+
+}
+
+.subtitle {
+    letter-spacing: 2px;
+    color: rgba(54, 53, 53, 0.863);
+    font-size: 18px;
+}
+
+.suites-img {
+    height: 300px;
+}
+
+.suite-overlay {
+    position: absolute;
+    height: 90%;
+    width: 85%;
+    background: rgba(0, 0, 0, 0.555);
+    top: 15px;
+    left: 30px;
+    opacity: 0;
+}
+
+.overlay-content {
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.image-wrapper:hover .suite-overlay {
+    opacity:1;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-200px);
+    }
+    to {
+        opacity: 1;
+        transform:translateX(0);
+    }
+}
+
+.suite-name {
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: white;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.suite-name-sub {
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: white;
+    padding-left: 10px;
+    font-weight: 200;
+}
+
+.suite-more-btn {
+    position: absolute;
+    top: 200px;
+    padding-left: 10px;
+}
+
+.custm-btn {
+    background: transparent;
+    border: solid 2px white;
+    color: white;
+}
+
+
+

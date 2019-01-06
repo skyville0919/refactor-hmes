@@ -1,0 +1,46 @@
+.fac-header {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.fac-header::after {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 70px;
+    height: 4px;
+    content: '';
+    background: #FFC300;
+}
+
+.fac-img {
+    height: 250px;
+}
+.fac-img:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+.fac-name {
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: black;
+    padding-top: 20px;
+    text-align: center;
+}
+
+
+.fac-name-sub {
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: black;
+    font-weight: 200;
+    padding-top: 20px;
+}
+
+.custm-fac-btn {
+    background: rgba(0, 0, 0, 0.664);
+    border: solid 2px gold;
+    color: white;
+}

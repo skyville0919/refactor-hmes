@@ -1,0 +1,440 @@
+/** CUSTOM CSS **/
+
+body
+{
+	font-family: 'Century Gothic' !important;
+}
+
+/**LOGIN **/
+.login-container
+{
+	margin-top: 80px !important;
+}
+
+/** LOGIN BORDER **/
+.border
+{
+	border-radius: 10px;
+}
+
+/** FOOTER **/
+.footer
+{
+	font-weight:  bold;
+	font-size: 16px;
+	font-family: 'Calibri';
+	color: #0000006e;
+}
+
+/** LOGIN HEADER **/
+.login-header
+{
+	color: rgba(121, 114, 114, 0.8117647058823529);;
+	font-family: 'Calibri';
+	font-weight: bolder;
+	font-size: 35px;
+    line-height: 28px;
+    margin-bottom: 16px;
+    margin-top: 18px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgba(121, 114, 114, 0.8117647058823529);;
+}
+
+/** LOGIN BACKGROUND **/
+.login-layout
+{
+	background: linear-gradient(to bottom right, rgba(148, 148, 148, 0.5215686274509804),rgba(142, 142, 141, 0.8784313725490196),rgb(99, 97, 97)) !important;
+}
+
+/** INPUT ICON FOCUS **/
+.input-icon>input:focus+.ace-icon
+{
+    color: #3f84bf !important;
+}
+
+/** BUTTON PRIMARY - LOGIN **/
+.btn-sandz
+{
+    padding: 5px 10px !important;
+}
+
+.btn-sandz, .btn-sandz.focus, .btn-sandz:focus
+{
+    background: linear-gradient(to bottom right, #3f84bf,#3171a9,#527b9e) !important;
+    border-color: rgba(255, 152, 0, 0.26) !important;
+    border-radius: 5px;
+    width: 120px;
+}
+
+/** FORGOT PASSWORD **/
+.forgot-password
+{
+	font-size: 12px;
+	font-style: italic;
+	font-weight: bold;
+	float: right;
+	margin: 5px;
+	color: #eee;
+}
+
+span a
+{
+	color: rgba(197, 41, 41, 0.6784313725490196) !important;
+}
+
+/** LOGIN BUTTON -TEXT **/
+.login-text
+{
+	font-size: 15px;
+	color: #fff;
+}
+
+/** LOGIN ICON **/
+.login-icon
+{
+	color: #fff !important
+}
+
+/** REGISTER **/
+.no-account
+{
+	font-weight: bolder;
+	color: rgba(121, 114, 114, 0.8117647058823529);
+	font-size: 13px;
+}
+
+.register
+{
+	color: rgba(197, 41, 41, 0.6784313725490196);;
+	font-weight: bolder;
+	font-size: 13px;
+}
+
+/** LOGIN ERROR **/
+.login-error
+{
+	font-size: 13px;
+	color: rgba(197, 41, 41, 0.6784313725490196);;
+	font-weight: bold;
+}
+
+.login-alert-error
+{
+	background-color: #f1d1d1;
+	color: rgba(197, 41, 41, 0.6784313725490196);;
+	border-radius: 5px;
+	height: 30px;
+	text-align: center;
+	width: 100%;
+	font-size: 15px;
+	padding: 7px;
+}
+
+/** REGISTER CONTAINER **/
+.register-container
+{
+	margin-top: 20px !important;
+}
+
+/** BACK TO LOGIN **/
+.blue-bold a
+{
+	color: #478FCA !important;
+	font-weight: bolder;
+}
+
+/** FORGOT SUCCESS **/
+.login-alert-success
+{
+    background-color: #d1f1d2;
+    color: rgba(91, 130, 85, 0.6784313725490196);
+	border-radius: 5px;
+	height: 30px;
+	text-align: center;
+	width: 100%;
+	font-size: 15px;
+	padding: 7px;
+}
+
+/** LABEL REGISTER **/
+.label-register
+{
+	color: #808080;
+}
+
+/** PASSWORD VALIDATION **/
+span p
+{
+	color: #babf74;
+	font-weight: normal;
+	margin-top: 3px;
+}
+
+/** REGISTER SUCCESS **/
+.login-alert-success-register
+{
+    background-color: #d1f1d2;
+    color: rgba(91, 130, 85, 0.6784313725490196);
+	border-radius: 5px;
+	height: 45px;
+	text-align: center;
+	width: 100%;
+	font-size: 15px;
+	padding: 7px;
+}
+
+/** NAVBAR **/
+.navbar
+{
+	background: #438EB9 !important;
+}
+
+.navbar-icon
+{
+	height: 40px;
+	margin: -10px 5px -10px 10px;
+}
+
+/** FOOTER INSIDE FONT **/
+.footer
+{
+	font-family: 'Century Gothic' !important;
+	font-size: 13px;
+}
+
+/**  BUTTONS **/
+.btn-user
+{
+    border-radius: 5px !important;
+    font-size: 13px;
+    padding: 5px;
+}
+
+.btn
+{
+	border-radius: 5px !important;
+}
+
+/** TABLE HEADER **/
+.table-header
+{
+	background-color: #F7F7F7 !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    color: #707070 !important;
+}
+
+/** POSITION **/
+.float-right
+{
+	float: right;
+	font-style: normal;
+	margin-right: 10px;
+}
+
+.center
+{
+	text-align: center;
+}
+
+/** BADGE **/
+.badge-warning, .badge.badge-warning, .label-warning, .label.label-warning
+{
+    background-color: #d29f55 !important;
+}
+
+/** DATA TABLE **/
+table.dataTable thead th, table.dataTable thead td 
+{
+    border-bottom: 1px solid #d0cece !important;
+}
+
+/** FONT-SIZE **/
+.smaller-font
+{
+	font-size: 12px !important;
+}
+
+.smaller-font-1
+{
+	font-size: 14px !important;
+}
+
+/** APPROVAL **/
+.no-bottom
+{
+	margin-bottom: 0px !important;
+}
+
+.alert
+{
+    border-radius: 5px !important;
+    width: 100%;
+    font-size: 15px !important;
+}
+
+/** ADD USER **/
+.adding-header
+{
+	color: #707070 !important;
+	padding-top: 13px;
+	font-weight: bolder;
+	font-size: 15px;
+}
+
+.add-user
+{
+	padding: 20px;
+}
+
+.label-user
+{
+	font-weight: bolder;
+}
+
+.adding-alert-error
+{
+	background-color: #f1d1d1;
+	color: rgba(197, 41, 41, 0.6784313725490196);;
+	border-radius: 5px;
+	height: 30px;
+	text-align: center;
+	width: 100%;
+	font-size: 15px;
+	padding: 7px;
+}
+
+.adding-alert-success
+{
+    background-color: #d1f1d2;
+    color: rgba(91, 130, 85, 0.6784313725490196);
+	border-radius: 5px;
+	height: 30px;
+	text-align: center;
+	width: 100%;
+	font-size: 15px;
+	padding: 7px;
+}
+
+/** DROPDOWN **/
+.ace-nav>li.light-blue>a:focus, .ace-nav>li.light-blue>a:hover, .ace-nav>li.open.light-blue>a
+{
+    background-color: #62A8D1 !important;
+}
+
+.ace-nav>li.light-blue>a
+{
+    background-color: #62A8D1 !important;
+}
+
+/** UPLOAD PICTURE **/
+.details
+{
+	font-weight: bolder !important;
+	font-size: 20px !important;
+	color: rgba(114, 113, 113, 0.87) !important;
+}
+
+.picture-label
+{
+	font-size: 14px !important;
+	font-weight: bolder !important;
+	color: rgba(114, 113, 113, 0.87) !important;
+}
+
+.details-1
+{
+	font-size: 14px !important;
+}
+
+/** CUSTOMER DETAILS **/
+.label-customer
+{
+	font-weight: bolder !important;
+	color: gray !important;
+}
+
+/** STEPS **/
+.steps>li.active .step, .steps>li.active:before, .steps>li.complete .step, .steps>li.complete:before
+{
+    border-color: #dc9b3e !important;
+}
+
+/** NAVIGATION **/
+.no-skin .navbar .navbar-toggle
+{
+    background-color: #62A8D1 !important;
+}
+
+/** USERS PAGE **/
+.customer-header
+{
+	color: rgba(0, 0, 0, 0.33) !important;
+	font-weight: bolder;
+	font-size: 15px;
+	text-transform: uppercase;
+}
+
+.customer-icon
+{
+	font-size: 20px !important;
+	color: rgba(0, 0, 0, 0.33) !important;
+}
+
+/** MULTISELECT **/
+.multiselect-container>li>a>label.checkbox, .multiselect-container>li>a>label.radio 
+{
+    color: #808080 !important;
+}
+
+.btn-1
+{
+	border-radius: 0px !important;
+}
+
+.margin-left
+{
+	margin-left: 20px;
+}
+
+/** PADDING-RIGHT **/
+.padding
+{
+	padding: 10px !important;
+}
+
+/** SOF Number **/
+.sof
+{
+	font-size: 17px !important;
+}
+
+/** CUSTOMER NAME VALIDATION **/
+.check-status
+{
+	font-size: 13px;
+	font-style: italic;
+	font-weight: bold;
+	margin: 5px;
+	color: rgba(197, 41, 41, 0.6784313725490196) !important;
+}
+
+/** ADD PROJECT **/
+.btn-grey
+{
+	padding: 10px !important;
+	border: none !important;
+	border-radius: 5px !important;
+}
+
+/** INPUT **/
+input[type=email]:focus, input[type=url]:focus, 
+input[type=search]:focus, input[type=tel]:focus, 
+input[type=color]:focus, input[type=text]:focus, 
+input[type=password]:focus, input[type=datetime]:focus, 
+input[type=datetime-local]:focus, input[type=date]:focus, 
+input[type=month]:focus, input[type=time]:focus, 
+input[type=week]:focus, input[type=number]:focus, textarea:focus 
+{
+  border-color: #3f84bf !important;
+}
