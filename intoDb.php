@@ -38,7 +38,7 @@ session_start();
         $add = $_POST['add'];
     
 
-        $paid = $_POST['hall'];
+        //$paid = $_POST['hall'];
 
         $id = $_POST['bed_id'];
     
@@ -88,7 +88,7 @@ session_start();
                     while($pre_row3 = mysqli_fetch_assoc($pre_result3)) {
                         $price = $pre_row3['Bed_Price'];
                         
-                        $query3 = "INSERT INTO accounting (Ref_No, Reserved_to, Acc_Date_Avail, Acc_Date_Paid, Acc_Type, Acc_Balance, Acc_Payment, Acc_Archived) VALUES ('$ref', '$last, $first', NOW(), '$arrival', 'Bedroom-Rent', '$price', '$price'/'$paid', '1')";
+                        $query3 = "INSERT INTO accounting (Ref_No, Reserved_to, Acc_Date_Avail, Acc_Date_Paid, Acc_Type, Acc_Balance, Acc_Payment, Acc_Archived) VALUES ('$ref', '$last, $first', NOW(), '$arrival', 'Bedroom-Rent', '$price', 0, '1')";
                         $result3 = mysqli_query($db, $query3);
                         
      
@@ -111,18 +111,31 @@ session_start();
                                         $query4 = "INSERT INTO add_ons (Ref_No,Add_Description,Add_Amount,Add_Quantity,Add_Date) VALUES ('$ref','$add[$i]','$add_price','1',NOW())";
                                         $result_query4 = mysqli_query($db, $query4);
         
-                                        $query5 = "INSERT INTO accounting (Ref_No, Reserved_to, Acc_Date_Avail, Acc_Date_Paid, Acc_Type, Acc_Balance, Acc_Payment, Acc_Archived) VALUES ('$ref','$last, $first', NOW(), '$arrival','add-ons-$add[$i]', '$add_price','$add_price'/'$paid', '1')";
+                                        $query5 = "INSERT INTO accounting (Ref_No, Reserved_to, Acc_Date_Avail, Acc_Date_Paid, Acc_Type, Acc_Balance, Acc_Payment, Acc_Archived) VALUES ('$ref','$last, $first', NOW(), '$arrival','add-ons-$add[$i]', '$add_price', 0, '1')";
                                         $result_query5 = mysqli_query($db, $query5);
                             }
                         }
     
                     }
             }
-        }     ?>
+
+            if(isset($_POST['paypalset']) && $_POST['paypalset']){
+                $target = dirname($_SERVER["PHP_SELF"])."/checkout.php?ref=$ref";
+                /*if(isset($_POST['half123']) && $_POST['half123'] == true){
+                    $target = $target."&half=true";
+                }*/
+                header("location: $target");
+                //print_r($_POST);
+
+
+            }
+        }
+
+             ?>
         <script>
-        alert("Reservation Successful!");
+        /*alert("Reservation Successful!");
         var delay = 3000;
-        setTimeout(function(){ window.location = 'dashboard.php'}, delay);
+        setTimeout(function(){ window.location = 'dashboard.php'}, delay);*/
     </script>
     <?php 
     }

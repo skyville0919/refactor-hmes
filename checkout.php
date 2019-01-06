@@ -9,6 +9,11 @@
 	}
 
 	$ref = $_GET['ref'];
+	$ishalf = false;
+
+	if(isset($_GET['half'])){
+		$ishalf = $_GET['half'];
+	}
 
 	// get bedroom reservation
 	$q1 = "SELECT * FROM `accounting` WHERE `Ref_No` = $ref ORDER BY `TR_Acc` ASC LIMIT 1";
@@ -25,7 +30,9 @@
 	$res3 = mysqli_query($db, $q3);
 	$total_charge = mysqli_fetch_assoc($res3)['amt'];
 
-
+	$slice = 1;
+	if ($ishalf == true)
+		$slice = 2;
 
 ?>
 <!--
@@ -45,7 +52,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //for-mobile-apps -->
-<link href="css/cstyle.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/checkoutstyle.css" rel="stylesheet" type="text/css" media="all" />
 <script src="js/jquery.min.js"></script>
 <link href='//fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
@@ -88,16 +95,16 @@ var ref = urlParams.get('ref');
 						<li>: <?= $bed_res['Acc_Balance']?></li>
 
 						<?php foreach($addons as $addon): ?>
-						    <li>: <?= $addon['Add_Amount'] ?></li>
+						    <li>: <?= $addon['Add_Amount'] / $slice ?></li>
 					    <?php endforeach; ?>
 
-					    <li>: &#8369;<?= $total_charge?></li>
+					    <li>: &#8369;<?= $total_charge / $slice ?></li>
 						
 			</ul>
 			<div class="clear"></div>
 		</div>
 		<div class="pay-form">
-			<center><div id="paypal-button" style="margin: 0 auto;"></div></center>
+			<center><div id="paypal-button" style="margin: 0 auto;" data-half="<?= $ishalf?>"></div></center>
 			
 		</div>
 	</div>
@@ -120,7 +127,8 @@ var ref = urlParams.get('ref');
     payment: function(data, actions) {
       // 2. Make a request to your server
       return actions.request.post('api/create-payment.php',{
-      	ref: ref
+      	ref: ref,
+      	half: false
       })
         .then(function(res) {
         	console.log(res.data);
@@ -138,7 +146,8 @@ var ref = urlParams.get('ref');
         paymentID: data.paymentID,
         payerID:   data.payerID,
         ref: ref,
-        success: 'true'
+        success: 'true',
+        half: false
       })
         .then(function(res) {
           //console.log(JSON.stringify(res));

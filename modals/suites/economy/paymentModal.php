@@ -43,7 +43,7 @@
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-2">
-                            <input type="checkbox" class="custm-checkbox" id="half-economy" name="hall" value="2" onchange="addonsEconomy()">
+                            <input type="checkbox" class="custm-checkbox" value="2" id="half-economy" name="half"  onchange="addonsEconomy()">
                         </div>
                         <div class="col-md-10">
                             <p class="label2">Half Payment</p>
@@ -54,7 +54,7 @@
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-2">
-                            <input type="checkbox" class="custm-checkbox" id="full-economy" name="hall" value="2" onchange="addonsEconomy()">
+                            <input type="checkbox" class="custm-checkbox" value="2" id="full-economy" name="full" onchange="addonsEconomy()">
                         </div>
                         <div class="col-md-10">
                             <p class="label2">Full Payment</p>
@@ -74,7 +74,7 @@
             <div class="row ml-3" id="cardMethod-economy" hidden>
                 <div class="row">
                     <div class="col-md-12">
-                        <input type="radio" class="custm-radio" id="off-economy" name="radio1" onchange="masterEconomy()">
+                        <input type="radio" class="custm-radio" id="off-economy" name="cardset" onchange="masterEconomy()">
                             <button class="btn-outline"><img src="images/mastercard-logo.png" width="60px" height="30px"></button>
                             <button class="btn-outline"><img src="images/visa-logo.png" width="60px" height="30px"></button>
                             <button class="btn-outline"><img src="images/americane-logo.png" width="60px" height="30px"></button>
@@ -85,7 +85,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <input type="radio" class="custm-radio" id="on-economy" name="radio1" onchange="masterEconomy()">
+                        <input type="radio" class="custm-radio" id="on-economy" name="paypalset" onchange="masterEconomy()">
                             <button class="btn-outline"><img src="images/paypal-logo.png" width="60px" height="30px"></button>
                         </input>
                     </div>

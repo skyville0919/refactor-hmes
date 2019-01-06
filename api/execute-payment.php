@@ -27,6 +27,11 @@
     	$execution = new PaymentExecution();
     	$execution->setPayerId($_POST['payerID']);
 
+    	$half = $_POST['half'];
+    	$slice = 1;
+    	if ($half === true)
+    		$slice = 2;
+
     	try{
     		$result = $payment->execute($execution, $apiContext);
 
@@ -44,7 +49,7 @@
 
     	// update database
     	$ref = $_POST['ref'];
-    	$sql = "UPDATE accounting SET `Acc_Payment` = `Acc_Balance` WHERE `Ref_No` = $ref";
+    	$sql = "UPDATE accounting SET `Acc_Payment` = `Acc_Balance` / $slice WHERE `Ref_No` = $ref";
     	$res = mysqli_query($db, $sql);
     	if (res){
     		echo $payment;

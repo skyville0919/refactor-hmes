@@ -27,20 +27,26 @@
 
 	// item lists (must total the same with amount)
 	$ref = $_POST['ref'];
+	$half = $_POST['half'];
 	$sql = "SELECT * FROM accounting WHERE Ref_No = $ref";
 	$res = mysqli_query($db, $sql);
+
+	$slice = 1;
+	if ($half === true)
+		$slice = 2;
 
 	$items = array();
 	$total = 0;
 	while ($row = mysqli_fetch_assoc($res)){
 		$item = new Item();
+		$price = $row['Acc_Balance'] / $slice;
 		$item->setName($row['Acc_Type'])
 			->setCurrency('PHP')
 		    ->setQuantity(1)
-		    ->setPrice($row['Acc_Balance']);
+		    ->setPrice($price);
 
 	    array_push($items, $item);
-	    $total = $total + $row['Acc_Balance'];
+	    $total = $total + $price;
 	}
 	$itemList = new ItemList();
 	$itemList->setItems($items);
