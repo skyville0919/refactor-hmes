@@ -135,7 +135,7 @@ $brandError = "";
 
 		function edit_id(Req_ID)
 		{
-				window.location.href='edit_accounts.php?edit_id='+Req_ID;
+				window.location.href='con_req.php?edit_id='+Req_ID;
 		}
 
 		function delete_id(Acc_ID)

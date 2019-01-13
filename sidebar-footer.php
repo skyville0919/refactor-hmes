@@ -335,12 +335,17 @@
 				document.getElementById("cardMethod").removeAttribute('hidden');
 				document.getElementById("tncCheck").setAttribute('hidden', 'hidden');
 				document.getElementById("cashMethod").setAttribute('hidden','hidden');
+				document.getElementById("card").value = "card";
 			} else if (cash == true) {
 				document.getElementById("cashMethod").removeAttribute('hidden');				
 				document.getElementById("tncCheck").removeAttribute('hidden');
 				document.getElementById("cardMethod").setAttribute('hidden','hidden');
 				document.getElementById("onCard").setAttribute('hidden', 'hidden');
 				document.getElementById("cardForm").setAttribute('hidden', 'hidden');
+				document.getElementById("card").value = "cash";
+				document.getElementById("on").value = "";
+				
+
 				// document.getElementById("tncCheck2").setAttribute('hidden', 'hidden');
 				// document.getElementById("tncCheck").setAttribute('hidden', 'hidden');
 				// document.getElementById("cardMethod").setAttribute('hidden','hidden');
@@ -384,6 +389,13 @@
 			// 	document.getElementById("tncCheck").setAttribute('hidden', 'hidden');
 
 			// }
+			if (document.getElementById("on").checked == false) {
+				document.getElementById("on").value = "offcard";
+			}
+			else {
+				document.getElementById("on").value = "paypalset";
+			}
+	
 		}
 
 		function handleChange2() {
@@ -582,7 +594,7 @@
 				}
 
 			$result = $("#result");
-			$("#details-form input, #offCard input, #details-form textarea").each(function()  {
+			$("#details-form input, #offCard input, #offCard select, #details-form textarea").each(function()  {
             $result.append("<input type='hidden' name='"+$(this).attr('name')+"'value='"+$(this).val()+"'/>")
 			});
 		}
@@ -637,6 +649,7 @@ var halfeconomy = document.getElementById("half-economy").checked;
 		document.getElementById("full-economy").value = "1";
 		console.log(document.getElementById("full-economy").value)	
 	}
+
 
 
 

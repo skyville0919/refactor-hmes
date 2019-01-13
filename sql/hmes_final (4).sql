@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 29, 2018 at 04:44 PM
+-- Generation Time: Jan 06, 2019 at 11:39 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -39,7 +39,6 @@ CREATE TABLE `accounting` (
   `Acc_Payment` decimal(6,2) NOT NULL,
   `Acc_Archived` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 
 
 --
@@ -82,7 +81,6 @@ CREATE TABLE `add_ons` (
   `Add_Quantity` tinyint(4) NOT NULL,
   `Add_Date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 
 
 --
@@ -248,13 +246,22 @@ CREATE TABLE `concierge` (
 --
 
 CREATE TABLE `concierge_request` (
-  `TR_Con` int(11) NOT NULL,
+  `Req_ID` int(11) NOT NULL,
   `Ref_No` int(11) DEFAULT NULL,
   `TR_Desc` varchar(500) DEFAULT NULL,
   `TR_Qty` int(11) DEFAULT NULL,
+  `Req_Date` date NOT NULL,
   `Archived` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `concierge_request`
+--
+
+INSERT INTO `concierge_request` (`Req_ID`, `Ref_No`, `TR_Desc`, `TR_Qty`, `Req_Date`, `Archived`) VALUES
+(1, 251, 'asd', 1, '2018-12-30', 1);
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `contanct_info`
@@ -339,6 +346,21 @@ INSERT INTO `customer_accounts` (`id`, `firstname`, `lastname`, `middlename`, `e
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `customer_card`
+--
+
+CREATE TABLE `customer_card` (
+  `Card_ID` int(11) NOT NULL,
+  `Ref_No` int(11) DEFAULT NULL,
+  `Card_Name` varchar(50) DEFAULT NULL,
+  `Card_Number` int(100) DEFAULT NULL,
+  `Card_Exp` varchar(50) DEFAULT NULL,
+  `Card_Sec` int(4) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `cus_log`
 --
 
@@ -419,15 +441,7 @@ CREATE TABLE `facility` (
   `Fac_Price` decimal(6,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `facility`
---
 
-INSERT INTO `facility` (`Fac_ID`, `Fac_Capacity`, `Fac_Type`, `Fac_Description`, `Fac_Image`, `Fac_Price`) VALUES
-(1, 100, 'FIESTA PAVILION', 'The Fiesta Pavilion is a popular choice for big conventions. It is a perfect balance between the old and the new, the traditional and progressive. It is easily divisible into 3 self-contained function rooms, namely the Pandanggo, the Polkabal and the Rigodon, catering to more intimate functions such as weddings and balls. The ballroom is equipped with state-of-the-art ceiling and lighting ?xtures that showcase seamless interplay between light and sound – an advantage for event organizers to matc', 'images/facilities/f1.jpg', '9000.00'),
-(2, 100, 'FIESTA PAVILION', 'The Fiesta Pavilion is a popular choice for big conventions. It is a perfect balance between the old and the new, the traditional and progressive. It is easily divisible into 3 self-contained function rooms, namely the Pandanggo, the Polkabal and the Rigodon, catering to more intimate functions such as weddings and balls. The ballroom is equipped with state-of-the-art ceiling and lighting ?xtures that showcase seamless interplay between light and sound – an advantage for event organizers to matc', 'images/facilities/f1.jpg', '9000.00');
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `fac_res`
@@ -447,19 +461,6 @@ CREATE TABLE `fac_res` (
   `Fac_Remarks` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `fac_res`
---
-
-INSERT INTO `fac_res` (`TR_Fac`, `Ref_No`, `Fac_ID`, `Reserved_to`, `Fac_Attendees`, `Fac_Date`, `Fac_Date_In`, `Fac_Date_Out`, `Fac_Time_In`, `Fac_Time_Out`, `Fac_Remarks`) VALUES
-(1, 199, 1, 'asdsa', 121, '2018-12-23', '2018-12-23', '2018-12-23', '12:06:00', '12:06:00', 'asdf'),
-(2, 201, 1, 'asdsa', 121, '2018-12-23', '2018-12-23', '2018-12-23', '12:06:00', '12:06:00', 'asdf'),
-(3, 211, 1, '', 0, '2018-12-23', '2018-12-23', '2018-12-23', '17:36:00', '17:36:00', ''),
-(4, 212, 1, '', 0, '2018-12-23', '2018-12-23', '2018-12-23', '17:43:00', '17:43:00', ''),
-(5, 213, 1, '', 0, '2018-12-23', '2018-12-23', '2018-12-23', '17:43:00', '17:43:00', ''),
-(6, 232, 1, ', ', 0, '2018-12-23', '2018-12-23', '2018-12-23', '20:26:00', '20:26:00', '');
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `housekeeping`
@@ -478,6 +479,7 @@ CREATE TABLE `housekeeping` (
 
 
 
+
 --
 -- Table structure for table `inventory`
 --
@@ -486,18 +488,12 @@ CREATE TABLE `inventory` (
   `Item_ID` int(11) NOT NULL,
   `Name` varchar(15) NOT NULL,
   `Quantity` int(11) NOT NULL,
+  `Critical` varchar(50) NOT NULL,
   `Price` decimal(6,2) DEFAULT NULL,
   `Brand` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `inventory`
---
 
-INSERT INTO `inventory` (`Item_ID`, `Name`, `Quantity`, `Price`, `Brand`) VALUES
-(1, 'SHAMPOO', 1200, '12.00', 'SUNSILK');
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `packages`
@@ -576,41 +572,6 @@ CREATE TABLE `restau_res` (
 
 
 
---
--- Table structure for table `sample`
---
-
-CREATE TABLE `sample` (
-  `id` int(11) NOT NULL,
-  `fuck` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `sample`
---
-
-INSERT INTO `sample` (`id`, `fuck`) VALUES
-(1, '0000-00-00'),
-(2, '0000-00-00'),
-(3, '0000-00-00'),
-(4, '0000-00-00'),
-(5, '0000-00-00'),
-(6, '0000-00-00'),
-(7, '0000-00-00'),
-(8, '0000-00-00'),
-(9, '0000-00-00'),
-(10, '0000-00-00'),
-(11, '2018-12-15'),
-(12, '2018-12-15'),
-(13, '2018-12-15'),
-(14, '2018-12-15'),
-(15, '2018-12-15'),
-(16, '2018-12-15'),
-(17, '2018-12-15'),
-(18, '2018-12-15'),
-(19, '2018-12-15');
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `schedule`
@@ -745,7 +706,7 @@ ALTER TABLE `concierge`
 -- Indexes for table `concierge_request`
 --
 ALTER TABLE `concierge_request`
-  ADD PRIMARY KEY (`TR_Con`),
+  ADD PRIMARY KEY (`Req_ID`),
   ADD KEY `Ref_No` (`Ref_No`);
 
 --
@@ -773,6 +734,13 @@ ALTER TABLE `customers`
 --
 ALTER TABLE `customer_accounts`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `customer_card`
+--
+ALTER TABLE `customer_card`
+  ADD PRIMARY KEY (`Card_ID`),
+  ADD KEY `Ref_No` (`Ref_No`);
 
 --
 -- Indexes for table `cus_log`
@@ -907,7 +875,7 @@ ALTER TABLE `admin_accounts`
 -- AUTO_INCREMENT for table `admin_log`
 --
 ALTER TABLE `admin_log`
-  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
 -- AUTO_INCREMENT for table `amenities`
@@ -943,7 +911,7 @@ ALTER TABLE `concierge`
 -- AUTO_INCREMENT for table `concierge_request`
 --
 ALTER TABLE `concierge_request`
-  MODIFY `TR_Con` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Req_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `contanct_info`
@@ -962,6 +930,12 @@ ALTER TABLE `customer`
 --
 ALTER TABLE `customers`
   MODIFY `Acc_ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `customer_card`
+--
+ALTER TABLE `customer_card`
+  MODIFY `Card_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `employee`
@@ -997,7 +971,7 @@ ALTER TABLE `housekeeping`
 -- AUTO_INCREMENT for table `inventory`
 --
 ALTER TABLE `inventory`
-  MODIFY `Item_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Item_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `packages`
@@ -1088,6 +1062,12 @@ ALTER TABLE `customer`
 --
 ALTER TABLE `customers`
   ADD CONSTRAINT `customers_ibfk_1` FOREIGN KEY (`Acc_ID`) REFERENCES `accounts` (`Acc_ID`);
+
+--
+-- Constraints for table `customer_card`
+--
+ALTER TABLE `customer_card`
+  ADD CONSTRAINT `customer_card_ibfk_1` FOREIGN KEY (`Ref_No`) REFERENCES `customer` (`Ref_No`);
 
 --
 -- Constraints for table `cus_log`

@@ -29,13 +29,13 @@
 
             <div class="row ml-2" id="cashPayment">
                 <label class="checkbox-container-payment label2">Cash Payment
-                    <input type="radio" name="method" id="cash" onchange="handleChange()"></input><span class="checkmark-payment"></span>
+                    <input type="radio" name="method" id="cash" value="cashPaid" onchange="handleChange()"></input><span class="checkmark-payment"></span>
                 </label>
             </div>   
             
             <div class="row ml-2" id="cardPayment">
                 <label class="checkbox-container-payment label2">Card Payment
-                    <input type="radio" name="method" id="card" onchange="handleChange()"></input><span class="checkmark-payment"></span>
+                    <input type="radio" name="method" id="card" value="cardPaid" onchange="handleChange()"></input><span class="checkmark-payment"></span>
                 </label>
             </div>  
 
@@ -43,7 +43,7 @@
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-2">
-                            <input type="checkbox" class="custm-checkbox" id="half" name="half123"  value="2" onchange="addonsChecker()">
+                            <input type="checkbox" class="custm-checkbox" id="half" name="hall"  value="2" onchange="addonsChecker()">
                         </div>
                         <div class="col-md-10">
                             <p class="label2">Half Payment</p>
@@ -54,7 +54,7 @@
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-2">
-                            <input type="checkbox" class="custm-checkbox" id="full" value="2" name="full"  onchange="addonsChecker()">
+                            <input type="checkbox" class="custm-checkbox" id="full" value="2" name="hall"  onchange="addonsChecker()">
                         </div>
                         <div class="col-md-10">
                             <p class="label2">Full Payment</p>
@@ -74,7 +74,7 @@
             <div class="row ml-3" id="cardMethod" hidden>
                 <div class="row">
                     <div class="col-md-12">
-                        <input type="radio" class="custm-radio" id="off" name="cardset" onchange="master()">
+                        <input type="radio" class="custm-radio" id="off" name="card" value="cardset" onchange="master()">
                             <button class="btn-outline"><img src="images/mastercard-logo.png" width="60px" height="30px"></button>
                             <button class="btn-outline"><img src="images/visa-logo.png" width="60px" height="30px"></button>
                             <button class="btn-outline"><img src="images/americane-logo.png" width="60px" height="30px"></button>
@@ -85,7 +85,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <input type="radio" class="custm-radio" id="on" name="paypalset" onchange="master()">
+                        <input type="radio" class="custm-radio" id="on" name="card" value="paypalset" onchange="master()">
                             <button class="btn-outline"><img src="images/paypal-logo.png" width="60px" height="30px"></button>
                         </input>
                     </div>

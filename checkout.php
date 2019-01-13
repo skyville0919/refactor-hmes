@@ -9,11 +9,7 @@
 	}
 
 	$ref = $_GET['ref'];
-	$ishalf = false;
-
-	if(isset($_GET['half'])){
-		$ishalf = $_GET['half'];
-	}
+	$ishalf = $_GET['hall'];
 
 	// get bedroom reservation
 	$q1 = "SELECT * FROM `accounting` WHERE `Ref_No` = $ref ORDER BY `TR_Acc` ASC LIMIT 1";
@@ -92,13 +88,13 @@ var ref = urlParams.get('ref');
 
 			</ul>
 			<ul class="list_ins2">
-						<li>: <?= $bed_res['Acc_Balance']?></li>
+						<li>: <?= $bed_res['Acc_Balance']/$ishalf?></li>
 
 						<?php foreach($addons as $addon): ?>
-						    <li>: <?= $addon['Add_Amount'] / $slice ?></li>
+						    <li>: <?= $addon['Add_Amount'] / $ishalf ?></li>
 					    <?php endforeach; ?>
 
-					    <li>: &#8369;<?= $total_charge / $slice ?></li>
+					    <li>: &#8369;<?= $total_charge / $ishalf ?></li>
 						
 			</ul>
 			<div class="clear"></div>
@@ -154,7 +150,7 @@ var ref = urlParams.get('ref');
           // 3. Show the buyer a confirmation message./
           
           // redirect
-          window.location.href = 'suites.php';
+          window.location.href = 'dashboard.php';
         });
     }
   }, '#paypal-button');

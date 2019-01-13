@@ -63,9 +63,9 @@
         }
     }
     else {
-        $query2 = "INSERT INTO concierge_request (Ref_No, TR_Desc,TR_Qty,Archived) VALUES('$ref','$con_desc','$con_qty','1')";
+        $query2 = "INSERT INTO concierge_request (Ref_No, TR_Desc,TR_Qty, Req_Date, Archived) VALUES('$ref','$con_desc','$con_qty', NOW(),'1')";
         $result2 = mysqli_query($db,$query2);
         echo $query2;
     }
-    // header("location:dashboard.php"):
+    header("location:dashboard.php");
 ?>

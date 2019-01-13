@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="customcss/suites.css">
     <link rel="stylesheet" href="customcss/facilities.css">
     <link rel="stylesheet" href="customcss/about.css">
+    <link rel="stylesheet" href="customcss/style.css">
     <link rel="stylesheet" href="customcss/modal.css">
 
 
@@ -134,29 +135,61 @@
                                 if(mysqli_num_rows($result) > 0) {
                                     while($row=mysqli_fetch_array($result)) {
                                         ?> 
-                                             <li class="nav-item active">
-                                                <label class="nav-link">Welcome, <?php echo $row['F_Name']."!" ?> </label>
+                                             <li class="light-blue dropdown-modal">
+					                            <a data-toggle="dropdown" href="#" class="">
+						                            <img class="custm-photo" src="<?php echo $row['Icon'] ; ?>" />
+						                                <span class="user-info">
+							                                Welcome, <?php echo $row['F_Name']; ?>!
+						                                </span>
+
+						                                    <i class="ace-icon fa fa-caret-down user-info"></i>
+					                            </a>
+
+					                            <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close custm-dropdown">
+						                            <li>
+							                            <a href="javascript:upload_picture('<?php echo $row['Acc_ID']; ?>')">
+								                            <i class="ace-icon fa fa-camera custm-a"></i> Upload Photo
+							                            </a>
+						                            </li>
+
+						                            <li>
+							                            <a href="javascript:change_password('<?php echo $row['Acc_ID']; ?>')">
+								                            <i class="ace-icon fa fa-lock"></i> Change Password
+							                            </a>
+						                            </li>
+
+                                                    <li class="divider"></li>
+                                                    
+						                            <li>
+							                            <a href="logout.php">
+								                            <i class="ace-icon fa fa-exit"></i> Logout
+							                            </a>
+						                            </li>
+					                            </ul>
                                             </li>
                                         <?php
                                     }
                                 }
-                            ?>
-                           
-                            <li class="nav-item">
-                                <a class="nav-link" href="dashboard.php">Dashboard</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="logout.php">Logout</a>
-                            </li>
+                                        ?>
                         </ul>
-                    </div>
+                    </div>      
                         <?php
-                    }
-                    ?>
-
-                   
-                    
-
+                            }
+                        ?>
                 </div>
             </nav>
+
+            <script type="text/javascript">
+
+                function upload_picture(id)
+                {
+                    window.location.href='upload_picture.php?upload_picture='+id;
+                }
+
+                function change_password(id)
+                {
+                    window.location.href='change_password.php?change_password='+id;
+                }
+    
+            </script>
         

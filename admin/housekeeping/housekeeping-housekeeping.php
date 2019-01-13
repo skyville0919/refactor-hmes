@@ -361,7 +361,7 @@ $taskError = "";
 																			<td class="center"><?php echo $row['area']; ?></td>
 																			<td class="center">
 																			<?php 
-																				if($row['action'] == "Immediate") {
+																				if($row['action'] == "IMMEDIATE") {
 																			?> <span class="badge badge-xs badge-danger" disabled><?php echo "IMMEDIATE"; ?></span>
 																				<?php } else if ($row['action'] == "SET") {
 																				?> <span class="badge badge-md badge-primary" disabled><?php echo "SET"; ?></span></td> <?php } ?>

@@ -41,7 +41,7 @@
 
 		if (!$error)
 		{
-			$queries = "UPDATE housekeeping SET date = NOW(), time = '$time', task = '$task', personnel_assigned = '$personnel', area = '$area', action = '$action' WHERE housekeeping_id =".$_GET['edit_id'];
+			$queries = "UPDATE housekeeping SET date = NOW(), time = '$time', task = '$task', personnel_assigned = '$personnel', area = '$area', action = UPPER('$action') WHERE housekeeping_id =".$_GET['edit_id'];
 			$result = mysqli_query($db, $queries);
 
 				if($result)

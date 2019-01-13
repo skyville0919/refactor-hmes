@@ -85,12 +85,11 @@
     $result3 = mysqli_query($db, $query3);
 ?>
 
-<div class="col-md-10 offset-1">
+<div class="col-md-10 offset-1 custm-table custm-td">
     <div class="clearfix"></div>
         <div class="top widget-box">
 		    <div class="table-header">
 				<i class="ace-icon fa fa-align-justify"></i> LIST OF RESERVATIONS
-				    <i class="float-right"> Number of Reservations: <span class="badge badge-primary"><?php echo $count; ?></span></i>
 		    </div>
             <table id="example" class="table table-striped table-bordered" style="width:100%">
                  <thead>
@@ -106,12 +105,12 @@
                     <tbody>
                     <?php while($row3 = $result3->fetch_assoc()): ?>
                     <tr>
-                    <td><?php echo date('Ymd-').$row3['TR_Acc'];?></td>
+                    <td class="custm-td"><?php echo date('Y-').str_pad($row3['TR_Acc'],6,'0',STR_PAD_LEFT)?></td>
                     <td><?php echo $row3['Acc_Type'];?></td>
                     <td><?php echo $row3['Acc_Date_Avail'];?></td>
-                    <td><?php echo $row3['Acc_Balance'];?></td>
-                    <td><?php echo $row3['Acc_Payment'];?></td>
-                    <td><?php echo $row3['Acc_Balance']-$row3['Acc_Payment']?></td>
+                    <td align="right">₱ <?php echo $row3['Acc_Balance'];?></td>
+                    <td align="right">₱ <?php echo $row3['Acc_Payment'];?></td>
+                    <td align="right">₱ <?php echo $row3['Acc_Balance']-$row3['Acc_Payment']?></td>
 
                     </tr>
         
